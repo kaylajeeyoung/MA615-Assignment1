@@ -20,3 +20,13 @@ sum_special <- function(df_x){
   
 }
 
+
+quant_special <- function(df_x){
+  try(if(!is.data.frame(df_x)) stop("Input data must be a data frame."))
+  
+  #calculate the quantiles
+  quant <- apply(df_x, MARGIN = 2, FUN = quantile)
+  
+  return(quant)
+}
+

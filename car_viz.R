@@ -9,16 +9,19 @@ mtcars_mpg2 <- mtcars[mtcars$mpg < 20,]
 mtcars_mpg2 <- mtcars_mpg2[, c(1,2,3,4,10)]
 
 #Added this to source from the hand_functions.R script so we can have
-#our sum_special function 
+#our functions
 if(!exists("sum_special", mode = "function"))
   source("hand_functions.R")
-
+if(!exists("quant_special", mode = "function"))
+  source("hand_functions.R")
 
 #tests
 sp_out <- sum_special(mtcars_mpg2)
 
 sp_out
 sp_out$sp_means
+
+quant_special(mtcars_mpg2)
 
 
 
